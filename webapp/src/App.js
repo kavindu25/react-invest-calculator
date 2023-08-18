@@ -39,7 +39,8 @@ function App() {
 
       {/* Todo: Show below table conditionally (only once result data is available) */}
       {/* Show fallback text if no data is available */}
-      <Resultstable />
+      {!userInput && <p>No investment data</p>}
+      {userInput && <Resultstable data={yearlyData} initialInvestment={userInput['current-savings']}/>}
     </div>
   );
 }
